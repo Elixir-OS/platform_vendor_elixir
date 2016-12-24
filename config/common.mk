@@ -115,6 +115,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/elixir/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
     vendor/elixir/prebuilt/common/bin/sysinit:system/bin/sysinit
+# Let's add the elixir of life here
+PRODUCT_COPY_FILES += \
+    vendor/elixir/prebuilt/common/app/browser.apk:system/app/TugaBrowser/browser.apk
 
 # JDC-specific init file
 PRODUCT_COPY_FILES += \
