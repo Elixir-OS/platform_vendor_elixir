@@ -12,23 +12,23 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include vendor/aosp/config/version.mk
+include vendor/elixir/config/version.mk
 
-PRODUCT_BRAND ?= JDCTeam
+PRODUCT_BRAND ?= ElixirOS
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
-    vendor/aosp/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
-    vendor/aosp/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/aosp/prebuilt/common/bin/50-base.sh:system/addon.d/50-base.sh \
+    vendor/elixir/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/elixir/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
+    vendor/elixir/prebuilt/common/bin/50-base.sh:system/addon.d/50-base.sh \
 
 # Bootanimation
 PRODUCT_COPY_FILES += \
-    vendor/aosp/prebuilt/common/bootanimation/bootanimation.zip:system/media/bootanimation.zip
+    vendor/elixir/prebuilt/common/bootanimation/bootanimation.zip:system/media/bootanimation.zip
 
 # SuperSU
 PRODUCT_COPY_FILES += \
-    vendor/aosp/prebuilt/common/supersu/supersu.zip:install/supersu/supersu.zip
+    vendor/elixir/prebuilt/common/supersu/supersu.zip:install/supersu/supersu.zip
 
 PRODUCT_PROPERTY_OVERRIDES += \
     keyguard.no_require_sim=true \
@@ -42,8 +42,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.setupwizard.rotation_locked=true
 
 DEVICE_PACKAGE_OVERLAYS += \
-    vendor/aosp/overlay/common \
-    vendor/aosp/overlay/dictionaries
+    vendor/elixir/overlay/common \
+    vendor/elixir/overlay/dictionaries
 
 # Thank you, please drive thru!
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -55,7 +55,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # EXT4/F2FS format script
 PRODUCT_COPY_FILES += \
-    vendor/aosp/prebuilt/common/bin/format.sh:install/bin/format.sh
+    vendor/elixir/prebuilt/common/bin/format.sh:install/bin/format.sh
 
 # Custom JDCTeam packages
 PRODUCT_PACKAGES += \
@@ -101,7 +101,7 @@ PRODUCT_PACKAGES += \
 
 # Backup Services whitelist
 PRODUCT_COPY_FILES += \
-    vendor/aosp/config/permissions/backup.xml:system/etc/sysconfig/backup.xml
+    vendor/elixir/config/permissions/backup.xml:system/etc/sysconfig/backup.xml
 
 # ADB authentication
 ADDITIONAL_DEFAULT_PROPERTIES += \
@@ -109,20 +109,20 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
     
 # For keyboard gesture typing
 PRODUCT_COPY_FILES += \
-    vendor/aosp/prebuilt/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
+    vendor/elixir/prebuilt/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
     
 # init.d support
 PRODUCT_COPY_FILES += \
-    vendor/aosp/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
-    vendor/aosp/prebuilt/common/bin/sysinit:system/bin/sysinit
+    vendor/elixir/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
+    vendor/elixir/prebuilt/common/bin/sysinit:system/bin/sysinit
 
 # JDC-specific init file
 PRODUCT_COPY_FILES += \
-    vendor/aosp/prebuilt/common/etc/init.local.rc:root/init.jdc.rc
+    vendor/elixir/prebuilt/common/etc/init.local.rc:root/init.elixir.rc
 
 # Copy over added mimetype supported in libcore.net.MimeUtils
 PRODUCT_COPY_FILES += \
-    vendor/aosp/prebuilt/common/lib/content-types.properties:system/lib/content-types.properties
+    vendor/elixir/prebuilt/common/lib/content-types.properties:system/lib/content-types.properties
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
@@ -134,7 +134,7 @@ PRODUCT_COPY_FILES += \
 
 # Prebuilt ConsumerIR
 PRODUCT_COPY_FILES += \
-    vendor/aosp/prebuilt/common/lib/hw/consumerir.msm8960.old:system/lib/hw/consumerir.msm8960.old
+    vendor/elixir/prebuilt/common/lib/hw/consumerir.msm8960.old:system/lib/hw/consumerir.msm8960.old
     
 # Stagefright FFMPEG plugin
 PRODUCT_PACKAGES += \
@@ -160,7 +160,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Changelog
 PRODUCT_COPY_FILES += \
-    vendor/aosp/Changelog.md:system/etc/Changelog.md
+    vendor/elixir/Changelog.md:system/etc/Changelog.md
 
 # Set cache location
 ifeq ($(BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE),)
